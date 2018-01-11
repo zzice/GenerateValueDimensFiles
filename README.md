@@ -3,7 +3,7 @@ Android 多dimens文件适配方案
 ## 步骤
 
 ### 1.下载Jar包 
-[GenerateValueDimensFiles.jar](http://www.baidu.com/)
+[GenerateValueDimensFiles.jar](https://github.com/zzice/GenerateValueDimensFiles/blob/master/GenerateValueDimensFiles.jar?raw=true)
 ### 2.运行Jar包 
 
 #### 运行命令: 
