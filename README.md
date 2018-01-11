@@ -1,5 +1,6 @@
-# GenerateValueDimensFiles
-Android 多dimens文件适配方案 
+# Android 多dimens文件适配方案 
+![](https://i.imgur.com/TpEbtzs.png)
+
 ## 步骤
 
 ### 1.下载Jar包 
