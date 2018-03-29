@@ -9,15 +9,15 @@
 
 #### 运行命令: 
 
-` java -jar GenerateValueDimensFiles.jar {isHasTablet} `
+` java -jar GenerateValueDimensFiles.jar {isHasLandscape} `
 
 #### 参数说明:	
-`isHasTablet` - 是否输出平板dimens文件
+`isHasLandscape` - 是否输出横屏dimens文件
 (Example.需平板 即` java -jar GenerateValueDimensFiles.jar true `)
 
 #### 运行说明: 
-	1. 若无平板需求，双击GenerateValueDimensFiles.jar即可运行创建res文件夹，否则运行命令创建。	
-
+	1. 若无平板需求，双击GenerateValueDimensFiles.jar即可运行创建res文件夹，否则运行命令创建。
+	2. 默认基准图大小  1080x1920 xxhdpi
 
 ------
 
