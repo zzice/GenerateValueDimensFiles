@@ -43,6 +43,9 @@ public class GenerateValueDimensFiles {
 	int targetWidth = 0;
 	int targetHeight = 0;
 
+	private static float originalWidth = 1080f;
+	private static float originalHeight = 1920f;
+
 	public GenerateValueDimensFiles() {
 		File dir = new File(dirStr);
 		if (!dir.exists()) {
@@ -147,8 +150,8 @@ public class GenerateValueDimensFiles {
 				sbForWidth.append(LAND_SP_TEMPLATE.replace("{0}", j + "").replace("{1}", dpNumber + ""));
 			}
 		} else {
-			float width = 1920f;
-			float height = 1080f;
+			float originalWidth = 1920f;
+			float originalHeight = 1080f;
 
 			sbForWidth.append("\n");
 			sbForWidth.append("    <!-- ===== Phone width_dp ===== -->\n");
@@ -158,9 +161,9 @@ public class GenerateValueDimensFiles {
 			targetWidth = targetHeight;
 			targetHeight = temp;
 
-			for (int j = 1; j <= width; j++) {
+			for (int j = 1; j <= originalWidth; j++) {
 				// 百分比
-				float percent = j / width;
+				float percent = j / originalWidth;
 				// 百分比后像素值
 				float percentPx = targetWidth * percent;
 				// dp值
@@ -172,9 +175,9 @@ public class GenerateValueDimensFiles {
 			sbForWidth.append("\n");
 			sbForWidth.append("    <!-- ===== Phone height_dp ===== -->\n");
 
-			for (int j = 1; j <= height; j++) {
+			for (int j = 1; j <= originalHeight; j++) {
 				// 百分比
-				float percent = j / height;
+				float percent = j / originalHeight;
 				// 百分比后像素值
 				float percentPx = targetHeight * percent;
 				// dp值
@@ -186,9 +189,9 @@ public class GenerateValueDimensFiles {
 			sbForWidth.append("\n\n");
 			sbForWidth.append("    <!-- ===== Phone sp ===== -->\n");
 
-			for (int j = 1; j <= height; j++) {
+			for (int j = 1; j <= originalHeight; j++) {
 				// 百分比
-				float percent = j / height;
+				float percent = j / originalHeight;
 				// 百分比后像素值
 				float percentPx = targetHeight * percent;
 				// dp值
@@ -199,17 +202,14 @@ public class GenerateValueDimensFiles {
 		}
 	}
 
-	
 	private void CalculatePortValues(float i, StringBuffer sbForWidth) {
-		float width = 1080f;
-		float height = 1920f;
 
 		sbForWidth.append("\n");
 		sbForWidth.append("    <!-- =====  ===== -->\n");
 
-		for (int j = 1; j <= width; j++) {
+		for (int j = 1; j <= originalWidth; j++) {
 			// 百分比
-			float percent = j / width;
+			float percent = j / originalWidth;
 			// 百分比后像素值
 			float percentPx = targetWidth * percent;
 			// dp值
@@ -221,9 +221,9 @@ public class GenerateValueDimensFiles {
 		sbForWidth.append("\n");
 		sbForWidth.append("    <!-- ===== Phone height_dp ===== -->\n");
 
-		for (int j = 1; j <= height; j++) {
+		for (int j = 1; j <= originalHeight; j++) {
 			// 百分比
-			float percent = j / height;
+			float percent = j / originalHeight;
 			// 百分比后像素值
 			float percentPx = targetHeight * percent;
 			// dp值
@@ -235,9 +235,9 @@ public class GenerateValueDimensFiles {
 		sbForWidth.append("\n\n");
 		sbForWidth.append("    <!-- ===== Phone sp ===== -->\n");
 
-		for (int j = 1; j <= height; j++) {
+		for (int j = 1; j <= originalHeight; j++) {
 			// 百分比
-			float percent = j / height;
+			float percent = j / originalHeight;
 			// 百分比后像素值
 			float percentPx = targetHeight * percent;
 			// dp值
@@ -287,6 +287,12 @@ public class GenerateValueDimensFiles {
 				switch (args.length) {
 				case 1:
 					isHasLandscape = Boolean.parseBoolean(args[0]);
+					break;
+				case 2:
+					String size = args[1];
+					String[] split = size.split("x");
+					originalWidth = Float.parseFloat(split[0]);
+					originalHeight = Float.parseFloat(split[1]);
 					break;
 				default:
 					break;

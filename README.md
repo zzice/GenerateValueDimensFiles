@@ -1,4 +1,4 @@
-# 房屋说明书 Android 多dimens文件适配方案 (手机/平板)
+# Android 多dimens文件适配方案 (手机/平板)
 ![](https://i.imgur.com/TpEbtzs.png)
 
 ## 步骤
@@ -9,15 +9,18 @@
 
 #### 运行命令: 
 
-` java -jar GenerateValueDimensFiles.jar {isHasLandscape} `
+` java -jar GenerateValueDimensFiles.jar {isHasLandscape} ` {size}
 
 #### 参数说明:	
 `isHasLandscape` - 是否输出横屏dimens文件
 (Example.需平板 即` java -jar GenerateValueDimensFiles.jar true `)
 
+`size` - 指定基准图大小 默认大小为xxhdpi 1080x1920
+(Example.` java -jar GenerateValueDimensFiles.jar false 720x1280`)
+
 #### 运行说明: 
 	1. 若无平板需求，双击GenerateValueDimensFiles.jar即可运行创建res文件夹，否则运行命令创建。
-	2. 默认基准图大小  1080x1920 xxhdpi
+	2. 默认基准图大小  1080x1920 xxhdpi ，若需更换基准图大小，配置size参数。
 
 ------
 
